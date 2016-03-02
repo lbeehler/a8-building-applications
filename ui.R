@@ -15,7 +15,7 @@ shinyUI(fluidPage(
                   label = h3("Species"),
                   choices = list("Setosa" = "set", "Versicolor" = "ver", "Virginica" = "vir", "All" = "all"), 
                   selected = "set"),
-      hr(),
+      hr(), 
       radioButtons("part", 
                    label = h3("Part of Flower"),
                    choices = list("Sepal" = 1, "Petal" = 2), 
@@ -24,8 +24,8 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      textOutput("text"),
-      plotlyOutput("insertPlot")
+      textOutput("text"), #description
+      plotlyOutput("insertPlot") #plot
       
     )
   )

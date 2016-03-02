@@ -15,7 +15,7 @@ shinyServer(function(input, output) {
     } else if (input$species == "set"){
       flower <- filter(iris, Species == "setosa")
     } else {
-      flower <- iris
+      flower <- iris # for 'all'
     }
 
     if (input$part == 1){
@@ -27,10 +27,10 @@ shinyServer(function(input, output) {
     }
 
     plot_ly(data = flower, 
-            x = length[,1], 
-            y = width[,1], 
+            x = length[,1], #vector of length
+            y = width[,1],  #vector of width values
             mode = "markers", 
-            color = Species) 
+            color = Species) # for 'all'
     
   })
 })
