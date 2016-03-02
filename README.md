@@ -1,20 +1,6 @@
 ## a8-building-applications
 
-For this assignment, you will create a repository in which you build your own shiny application. The application should provide users with the ability to interact with a visual representation of the  iris  dataset (more info below). What the application looks like is up to you, as long as it meets the following requirements:
-
-. There is a  sidePanel  in which you've created at least two widgets that change the visual output in your application
-. One of your widgets must change the data that is being displayed. For example, the attribute being shown on the x or y axis. Simply changing the color of the markers would not meet this requirement.
-. You must create a visual representation of a dataset that reacts to the widgets in the  sidePanel 
-. You must push your application up to the  shinyapps.io  server, making it publically usable
-. A  Readme.md  file, because it's important to document your code. This file should contain a link to your project.
-
-A scatter-plot with 2 widgets controlling the x variable and y variable would be sufficient. 
-
-####Visual representation
-
-The  mainPanel  of your application should contain a visual representation of the  iris  dataset. The visualization can be made with base R graphics, plotly, or something less supported but more interesting. While we don't expect you to create anything ground-breaking, we do expect you to create a clear visualization with proper labels. And of course, the graphic needs to react to changing values in the widgets.
-
-###Submission
+####Submission
 
 
 1. Did you receive any help from others (classmates, etc)? If so, please list who.

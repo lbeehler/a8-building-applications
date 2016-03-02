@@ -13,7 +13,7 @@ shinyUI(fluidPage(
     sidebarPanel(
       radioButtons("species", 
                   label = h3("Species"),
-                  choices = list("Setosa" = "set", "Versicolor" = "ver", "Virginica" = "vir"), 
+                  choices = list("Setosa" = "set", "Versicolor" = "ver", "Virginica" = "vir", "All" = "all"), 
                   selected = "set"),
       hr(),
       radioButtons("part", 
@@ -24,6 +24,7 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
+      textOutput("text"),
       plotlyOutput("insertPlot")
       
     )

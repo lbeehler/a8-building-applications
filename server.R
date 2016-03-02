@@ -4,31 +4,33 @@ library(dplyr)
 
 shinyServer(function(input, output) {
 
-  output$insertPlot<- renderPlot({
-    num <- input$part # either 1 (sepal) or 2 (petal)
-    
-    if (num == 1){
-      length <- select(iris, Species, contains("Sepal.length"))
-      width <- select(iris, Species, contains("Sepal.width"))
-    } else {
-      length <- select(iris, Species, contains("Petal.length"))
-      width <- select(iris, Species, contains("Petal.width"))
-    }
-    
+  output$text <- renderText("Use the widgets to control the species of iris and the aspect of the flower that you're interested in.")
+  
+  output$insertPlot<- renderPlotly({
+
     if (input$species == "vir"){
       flower <- filter(iris, Species == "virginica")
     } else if (input$species == "ver"){
       flower <- filter(iris, Species == "versicolor")
-    } else {
+    } else if (input$species == "set"){
       flower <- filter(iris, Species == "setosa")
+    } else {
+      flower <- iris
     }
-    
-    
+
+    if (input$part == 1){
+      length <- select(flower, contains("Sepal.length"))
+      width <- select(flower, contains("Sepal.width"))
+    } else {
+      length <- select(flower, contains("Petal.length"))
+      width <- select(flower, contains("Petal.width"))
+    }
+
     plot_ly(data = flower, 
-            x = length, 
-            y = width, 
+            x = length[,1], 
+            y = width[,1], 
             mode = "markers", 
-            color = Species)
+            color = Species) 
     
   })
 })
